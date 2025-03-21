@@ -61,7 +61,7 @@ private:
 	UCameraComponent* Camera;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "DamageSysytem", meta = (AllowPrivateAccess = "true"))
-	UDamageSystemActorComponent* DamageSystemComponent = nullptr;
+	UDamageSystemActorComponent* DamageSystemComponent;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
 	UInputAction* MoveAction;

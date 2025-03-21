@@ -14,6 +14,7 @@
 APlayerCharacter::APlayerCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	Tags.AddUnique(FName(TEXT("PlayerCharacter")));
 
 	PlayerCapsule = GetCapsuleComponent();
 	PlayerCapsule->InitCapsuleSize(42.0f, 92.0f);
@@ -34,6 +35,8 @@ APlayerCharacter::APlayerCharacter()
 
 	PlayerMovement = GetCharacterMovement();
 	PlayerMovement->MaxWalkSpeed = 600.0f;
+
+	DamageSystemComponent = CreateDefaultSubobject<UDamageSystemActorComponent>(TEXT("DamageSystem"));
 
 }
 
