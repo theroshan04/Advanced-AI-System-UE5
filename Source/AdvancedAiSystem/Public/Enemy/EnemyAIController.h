@@ -75,48 +75,48 @@ protected:
 	virtual void OnPossess(APawn* InPawn) override;
 	virtual void OnUnPossess() override;
 
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Setup|Reference", meta = (AllowPrivateAccess = "true"))
+	AActor* AttackTarget;
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Perception", meta = (AllowPrivateAccess = "true"))
-	UAIPerceptionComponent* AIPerception = nullptr;
+	UAIPerceptionComponent* AIPerception;
 
-	UPROPERTY(VisibleAnywhere, Category = "Perception")
+	UPROPERTY()
 	UAISenseConfig_Sight* SightConfig;
 
-	UPROPERTY(VisibleAnywhere, Category = "Perception")
+	UPROPERTY()
 	UAISenseConfig_Hearing* HearingConfig;
 
-	UPROPERTY(VisibleAnywhere, Category = "Perception")
+	UPROPERTY()
 	UAISenseConfig_Damage* DamageConfig;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "KeysName", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Setup|KeysName", meta = (AllowPrivateAccess = "true"))
 	FName StateKeyName;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "KeysName", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Setup|KeysName", meta = (AllowPrivateAccess = "true"))
 	FName AttackTargetKeyName;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "KeysName", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Setup|KeysName", meta = (AllowPrivateAccess = "true"))
 	FName PointOfInterestKeyName;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "KeysName", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Setup|KeysName", meta = (AllowPrivateAccess = "true"))
 	FName AttackRadiusKeyName;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "KeysName", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Setup|KeysName", meta = (AllowPrivateAccess = "true"))
 	FName DefendRadiusKeyName;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default", meta = (AllowPrivateAccess = "true"))
-	AActor* AttackTarget = nullptr;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadWrite, Category = "Setup|Reference", meta = (AllowPrivateAccess = "true"))
 	TArray<AActor*> KnownSeenActor;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Setup|Parameters", meta = (AllowPrivateAccess = "true"))
 	float TimeToSeekAfterLoosingSight;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerHandle", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadWrite, Category = "TimerHandle", meta = (AllowPrivateAccess = "true"))
 	FTimerHandle CheckIfForgetSeenActorTimerHandle;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TimerHandle", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadWrite, Category = "TimerHandle", meta = (AllowPrivateAccess = "true"))
 	FTimerHandle SeekAttackTargetTimerHandle;
 
 

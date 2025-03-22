@@ -55,8 +55,8 @@ public:
 
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
-	UBehaviorTree* BehaviorTree = nullptr;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Setup|AI")
+	UBehaviorTree* BehaviorTree;
 
 	UPROPERTY(BlueprintAssignable, Category = "Delegates")
 	FOnPatrollingDestinationReached OnPatrollingDestinationReached;
@@ -70,20 +70,25 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Delegates")
 	FOnAttackEnd OnAttackEnd;
 
-private:
-	UCapsuleComponent* EnemyCapsule = nullptr;
-	USkeletalMeshComponent* EnemyMesh = nullptr;
-	UCharacterMovementComponent* EnemyMovementComponent = nullptr;
+protected:
+	UPROPERTY(BlueprintReadOnly, Category = "Reference", meta = (AllowPrivateAccess = "true"))
+	UCapsuleComponent* EnemyCapsule;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Reference", meta = (AllowPrivateAccess = "true"))
+	USkeletalMeshComponent* EnemyMesh;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Reference", meta = (AllowPrivateAccess = "true"))
+	UCharacterMovementComponent* EnemyMovementComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "DamageSystem", meta = (AllowPrivateAccess = "true"))
-	UDamageSystemActorComponent* DamageSystemComponent = nullptr;
+	UDamageSystemActorComponent* DamageSystemComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Reference", meta = (AllowPrivateAccess = "true"))
-	AEnemyAIController* EnemyController = nullptr;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Setup|Reference", meta = (AllowPrivateAccess = "true"))
+	AEnemyAIController* EnemyController;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Setup|Animation", meta = (AllowPrivateAccess = "true"))
 	TArray<UAnimMontage*>StealthVictimMontages;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Setup|Weapon", meta = (AllowPrivateAccess = "true"))
 	bool bIsWeaponEquipped;
 };

@@ -43,6 +43,7 @@ protected:
 	void StealthAttack();
 
 private:
+	UPROPERTY(BlueprintReadOnly, Category = "Reference", meta = (AllowPrivateAccess = "true"))
 	AMainPlayerController* PlayerController;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Reference", meta = (AllowPrivateAccess = "true"))
@@ -63,19 +64,19 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "DamageSysytem", meta = (AllowPrivateAccess = "true"))
 	UDamageSystemActorComponent* DamageSystemComponent;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Setup|Input", meta = (AllowPrivateAccess = "true"))
 	UInputAction* MoveAction;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Setup|Input", meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Setup|Input", meta = (AllowPrivateAccess = "true"))
 	UInputAction* JumpAction;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Setup|Input", meta = (AllowPrivateAccess = "true"))
 	UInputAction* StealthAttackAction;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Setup|Input", meta = (AllowPrivateAccess = "true"))
 	UInputMappingContext* DefaultMappingContext;
 
 };

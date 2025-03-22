@@ -34,13 +34,13 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Delegates")
 	FOnDamageResponse OnDamageResponse;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Setup|Health", meta = (AllowPrivateAccess = "true"))
 	float Health;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Setup|Health", meta = (AllowPrivateAccess = "true"))
 	float MaxHealth;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadWrite, Category = "Health", meta = (AllowPrivateAccess = "true"))
 	bool bIsDead;
 
 };
